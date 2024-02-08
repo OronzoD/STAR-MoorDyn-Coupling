@@ -11,7 +11,7 @@ int iter=0;
 //Forces and Moments are saved to be used in all inner iteration of Star CCm+ and evaluated only at the end of the time step
 double cache_f1=0,cache_f2=0,cache_f3=0,cache_m1=0,cache_m2=0,cache_m3=0,counter=1; 
 // Coordinate of CoG from Laboratory Coordinate System.  REMEMBER TO CHANGE IT!!!!!
-double Xcg=0,Ycg=0,Zcg=0; 
+double Xcg=0,Ycg=0,Zcg=-1; 
 // Rotation of CoG in respect to default configuration referred to lines.txt.  REMEMBER TO CHANGE IT!!!!!
 //These angle are summed to the rotation of the body read from Star becouse the reports starts always from 0. Useful in Free-Decay tests
 double Phi=0, Theta=0, Psi=0;
