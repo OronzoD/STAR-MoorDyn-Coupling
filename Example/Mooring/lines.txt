@@ -1,0 +1,29 @@
+---------------------- LINE DICTIONARY -----------------------------------------------------
+LineType  	Diam    	MassDenInAir  	EA        	BA/-zeta     Can     Cat   	Cdn     Cdt 
+(-)       	(m)       	(kg/m)        	(N)       	(Pa-s/-)     (-)     (-)    (-)     (-)  
+Chain   	0.072      	31       		1.36e8 	    -0.8         1       0.5   	0.206  	1.348
+Poly     	0.05      	2         		2.725e6     -0.8         1       0   	1.2     0.3
+---------------------- NODE PROPERTIES -----------------------------------------------------
+Node    Type        X        Y         Z        M        V      FX    FY   FZ   CdA    CA
+(-)     (-)        (m)      (m)       (m)      (kg)     (m^3)  (kN)  (kN) (kN) (m^2)   (-)
+1       Fix        -10		0   	-50       	0        0      0     0    0     0     0
+2      Connect     -9.5    	0    	-45       	0        0      0     0    0     0     0
+3      Connect     0     	0    	-8       	0        0      0     0    0     0     0
+4      Vessel      0      	0   	-2       	0        0      0     0    0     0     0
+---------------------- LINE PROPERTIES -----------------------------------------------------
+Line    LineType  	UnstrLen  	NumSegs   	NodeAnch  	NodeFair  	Flags/Outputs
+(-)     (-)       	(m)         (-)       	(-)       	(-)       	(-)
+1       Chain     	5     		3        	1         	2         	pt
+2		Poly		45			20			2			3			pt
+3		Chain		5			3			3			4			pt
+---------------------- SOLVER OPTIONS -----------------------------------------
+1e-4    dtM          	- time step to use in mooring integration (s)
+1000    rhoW         	- water density (kg/m^3)
+0       WaveKin      	- wave kinematics flag (0=neglect, the only option currently supported)
+3.0e6   kBot         	- bottom stiffness constant(Pa/m)
+3.0e5   cBot         	- bottom damping constant(Pa-s/m)
+50      WtrDpth      	- water depth (m)
+2.0     CdScaleIC    	- factor by which to scale drag coefficients during dynamic relaxation IC gen
+60     	TmaxIC       	- max time for IC gen (s)
+0.01    threshIC     	- threshold for IC convergence
+--------------------- need this line ------------------
