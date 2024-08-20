@@ -122,7 +122,7 @@ extern "C" void uclib() {
 
 	LinesClose();
 	// Initial Position and Rotation of the CoG
-	double x[6] = { Xcg,Ycg,Zcg,Phi,Teta,Psi};
+	double x[6] = { Xcg,Ycg,Zcg,Phi,Theta,Psi};
 	double xd[6] = { 0, 0, 0, 0, 0, 0 };
 
 	timestep=0;
