@@ -1,14 +1,17 @@
 # Compiler and linker flags
 ifeq ($(OS),Windows_NT)
-    LFLAGS = -shared -static-libgcc -static-libstdc++ -DMoorDyn_EXPORTS -DWIN32
-    CFLAGS = -c -O3 -g -w -Wall -static -static-libgcc -static-libstdc++ -std=gnu++0x -DWIN32
+    	LFLAGS = -shared -static-libgcc -static-libstdc++ -DMoorDyn_EXPORTS -DWIN32
+    	CFLAGS = -c -O3 -g -w -Wall -static -static-libgcc -static-libstdc++ -std=gnu++0x -DWIN32
+	# MoorDyn object files folder
+	MDD = MoorDyn-master/compileDLL
 else
-    LFLAGS = -shared -static-libgcc -static-libstdc++ -DMoorDyn_EXPORTS -DLINUX -fPIC
-    CFLAGS = -c -O3 -g -w -Wall -static -static-libgcc -static-libstdc++ -std=gnu++0x -DLINUX -fPIC
+	LFLAGS = -shared -static-libgcc -static-libstdc++ -DMoorDyn_EXPORTS -DLINUX -fPIC
+    	CFLAGS = -c -O3 -g -w -Wall -static -static-libgcc -static-libstdc++ -std=gnu++0x -DLINUX -fPIC
+	# MoorDyn object files folder
+	MDD = MoorDyn-master/compileSO
 endif
 
 # MoorDyn object files
-MDD = MoorDyn-master/compileSO
 MD = ${MDD}/MoorDyn.o ${MDD}/Line.o ${MDD}/Connection.o ${MDD}/Misc.o ${MDD}/kiss_fft.o
 
 # Main target
