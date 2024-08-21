@@ -1,5 +1,12 @@
 # STAR-MoorDyn-Coupling
-If you use this coupling please consider cite the related open acsess paper at LINK: DOI:
+If you use this coupling please consider cite the related open acsess paper at 
+LINK:
+ https://kwnsfk27.r.eu-west-1.awstrack.me/L0/https:%2F%2Fauthors.elsevier.com%2Fsd%2Farticle%2FS0306-2619(24)01585-X/1/0102019176949299-288f55be-ca99-4e3d-9b4b-779bf5c452de-000000/xkC80JuGDe9FhwSkuviq8abpHfE=388 
+
+DOI: (currently is not working probably because it was just added)
+
+https://doi.org/10.1016/j.apenergy.2024.124202
+
 In this repository, you'll find the files necessary for creating a coupling between Star CCM+ and MoorDyn. In the "Library" folder, there is a makefile: you can compile the library using the command "make makefile comp". In the "Coupling" folder, there are "uclib.h" and "uclib.cpp". You do not need to modify the "uclib.h" file. Additionally, in the "uclib.cpp," there is the coupling. It works by calling MoorDyn only at the end of a time step, and for the other iterations, it uses the moments and forces previously calculated. 
 
 In the "uclib.cpp," you HAVE TO modify these parameters: 
