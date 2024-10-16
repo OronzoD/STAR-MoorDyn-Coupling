@@ -19,7 +19,7 @@ In the "uclib.cpp," you HAVE TO modify these parameters:
 - SCALE: 1 if the simulation is for a complete body, 2 if there is symmetry for the plane y=0. 
 - II: The value of Inner Iteration in STAR (I need to check whether the number should match the inner iteration or the iteration of the DFBI solver. I haven’t thought about this before, as I usually use the same number for both.). You need to match the two numbers; otherwise, the coupling will be mathematically incorrect. 
 - Xcg, Ycg, Zcg: the coordinates of the CoG. 
-- Phi, Theta, Psi: the rotation with respect to the body's rest position. ONLY USE IT FOR FREE DECAY!!! You will need MoorDyn to compile the library. It needs to be placed in a folder named MoorDyn-master/compileSO. You also need to compile MoorDyn first.
+- Phi, Theta, Psi: the rotation with respect to the body's rest position. ONLY USE IT FOR FREE DECAY!!!
 
 Additionally, in the "Example" folder, there's an example of a Point Absorber with its mooring system and a precompiled library. There is also a Java Macro which automatically sets up the coupling. The file "test.so" is only to show how the macro works; probably, the precompiled library will not work (you need to compile it on your machine).
 
