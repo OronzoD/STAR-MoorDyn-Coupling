@@ -8,6 +8,8 @@ DOI:
 
 https://doi.org/10.1016/j.apenergy.2024.124202
 
+Please refer to Section 2.3 of the paper for details on the coupling. Here, I’ll outline the main aspects:
+
 BEFORE compiling the library, you need to compile MoorDyn. The make file looks for the Moordyn files located in "MoorDyn-master/compileSO" for Linux, "MoorDyn-master/compileDLL" for Windows.
 
 The Windows implementation isn’t currently working. I’ll try to fix it over the next couple of days—hopefully!
