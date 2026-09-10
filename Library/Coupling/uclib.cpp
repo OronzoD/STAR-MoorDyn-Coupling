@@ -1,11 +1,20 @@
 #include "../Coupling/uclib.h"
-#include "../MoorDyn-master/MoorDyn.h"
+#include "../MoorDyn-1.01.02/MoorDyn.h"
+#include <cstdio>
+#include <cstring>
+
+#ifdef _WIN32
+#include <direct.h>
+#include <windows.h>
+#define getcwd _getcwd
+#else
+#include <dlfcn.h>
 #include <unistd.h>
+#endif
 
 const int DOF = 6;
 // SCALE=1 if no symmetry. SCALE=2 if there is symmetry along y=0. REMEMBER TO CHANGE IT!!!!!
 const int SCALE = 1;			
-double timestep = 0;
 int lastTimeLevel = -1;
 int iter=0;
 //Forces and Moments are saved to be used in all inner iteration of Star CCm+ and evaluated only at the end of the time step
@@ -17,6 +26,51 @@ double Xcg=0,Ycg=0,Zcg=-1;
 double Phi=0, Theta=0, Psi=0;
 // Inner Iteration in Star. REMEMBER TO CHANGE IT!!!!!
 int II=8;
+
+#ifdef _WIN32
+// MoorDyn v1 opens Mooring/lines.txt using a relative path. STAR-CCM+ does
+// not guarantee that the process working directory is the simulation folder,
+// so use the directory containing this loaded DLL.
+static void SetWorkingDirectoryToLibraryFolder()
+{
+	HMODULE module = nullptr;
+	char modulePath[MAX_PATH] = {0};
+	if (GetModuleHandleExA(
+			GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS |
+			GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
+			reinterpret_cast<LPCSTR>(&SetWorkingDirectoryToLibraryFolder),
+			&module) &&
+		GetModuleFileNameA(module, modulePath, MAX_PATH) > 0)
+	{
+		char *lastSeparator = strrchr(modulePath, '\\');
+		if (lastSeparator != nullptr)
+		{
+			*lastSeparator = '\0';
+			_chdir(modulePath);
+		}
+	}
+}
+#else
+// Linux equivalent of the Windows implementation above. dladdr() returns the
+// path of the shared object containing the supplied function address.
+static void SetWorkingDirectoryToLibraryFolder()
+{
+	Dl_info libraryInfo = {0};
+	if (dladdr(reinterpret_cast<void *>(&SetWorkingDirectoryToLibraryFolder),
+			   &libraryInfo) != 0 && libraryInfo.dli_fname != nullptr)
+	{
+		char libraryPath[4096] = {0};
+		std::strncpy(libraryPath, libraryInfo.dli_fname,
+					sizeof(libraryPath) - 1);
+		char *lastSeparator = strrchr(libraryPath, '/');
+		if (lastSeparator != nullptr)
+		{
+			*lastSeparator = '\0';
+			chdir(libraryPath);
+		}
+	}
+}
+#endif
 
 extern "C" void MooringMoments(
 		Real (*result)[3],       	// Output of the Function, Mooring Forces  
@@ -125,14 +179,28 @@ extern "C" void uclib() {
 	double x[6] = { Xcg,Ycg,Zcg,Phi,Theta,Psi};
 	double xd[6] = { 0, 0, 0, 0, 0, 0 };
 
-	timestep=0;
-	
-	// MoorDyn Initialization
-	LinesInit(x,xd);
+	SetWorkingDirectoryToLibraryFolder();
+
+	// This must happen after changing directory because LinesInit() opens
+	// Mooring/lines.txt.
+	int initResult = LinesInit(x,xd);
+	if (initResult != 0)
+	{
+		std::cerr << "MoorDyn initialization failed (LinesInit returned "
+				  << initResult << "). Check that Mooring/lines.txt exists in: ";
+		char failedCwd[1024];
+		if (getcwd(failedCwd, sizeof(failedCwd)) != nullptr)
+			std::cerr << failedCwd;
+		else
+			std::cerr << "the current working directory";
+		std::cerr << std::endl;
+		return;
+	}
 
 	char cwd[1024];
-	chdir("/path/to/change/directory/to");
-	getcwd(cwd, sizeof(cwd));
+	if (getcwd(cwd, sizeof(cwd)) == nullptr) {
+		std::snprintf(cwd, sizeof(cwd), "<current directory unavailable>");
+	}
 
 	std::cout << "\n\n\n" <<
 	"################################################################## \n" <<

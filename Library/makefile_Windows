@@ -1,16 +1,22 @@
-# Compiler and linker flags
-LFLAGS = -shared -static-libgcc -static-libstdc++ -DMoorDyn_EXPORTS -DWIN32
-CFLAGS = -c -O3 -g -w -Wall -static -static-libgcc -static-libstdc++ -std=gnu++0x -DWIN32
+# Build with MinGW-w64 from any terminal where g++ and make are on PATH.
+# Run this file from Library\.
+CXX = g++
+CXXFLAGS = -O3 -std=gnu++11 -DDOUBLE_PRECISION -DWIN32 -D_WIN32 -I MoorDyn-1.01.02
+# Full path to the STAR-CCM+ import library. Change this only if the STAR
+# version or installation location changes.
+STAR_USERFUNCTIONS_LIB ?= C:/Program Files/Siemens/21.02.008-R8/STAR-CCM+21.02.008-R8/star/lib/win64/clang20.1vc14.2-r8/lib/UserFunctions.lib
+LDFLAGS = -shared -static-libgcc -static-libstdc++
+LDLIBS = "$(STAR_USERFUNCTIONS_LIB)"
 
 # MoorDyn object files
-MDD = MoorDyn-master/compileDLL
-MD = ${MDD}/MoorDyn.o ${MDD}/Line.o ${MDD}/Connection.o ${MDD}/Misc.o ${MDD}/kiss_fft.o
+MDD = MoorDyn-1.01.02/compileDLL
+MD = $(MDD)/MoorDyn.o $(MDD)/Line.o $(MDD)/Connection.o $(MDD)/Misc.o $(MDD)/kiss_fft.o
 
 # Main target
 main:
-	@g++ main.c ${MD} -lstdc++ -o main.exe
-	@./main.exe
+	$(CXX) $(CXXFLAGS) main.c $(MD) -o main.exe
+	./main.exe
 
 # Compile shared library
 comp:
-	@g++ -DDOUBLE_PRECISION ${LFLAGS} Coupling/uclib.cpp ${MD} -o test.dll
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) Coupling/uclib.cpp $(MD) $(LDLIBS) -o test.dll

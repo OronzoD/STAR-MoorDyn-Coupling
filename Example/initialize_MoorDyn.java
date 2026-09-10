@@ -17,9 +17,19 @@ public class initialize_MoorDyn extends StarMacro {
     Simulation simulation_0 = getActiveSimulation();
 	//GET DIR NAME
 	String dir = simulation_0.getSessionDir(); 
+	String sep = System.getProperty("file.separator"); //get the right separator for your operating system
 
 	//LOAD LIBRARY
-    UserLibrary userLibrary_0 = simulation_0.getUserFunctionManager().createUserLibrary(resolvePath(dir+"//test.so")); 
+    String osName = System.getProperty("os.name").toLowerCase(Locale.ROOT);
+    String libraryName;
+    if (osName.contains("win")) {
+      libraryName = "test.dll";
+    } else if (osName.contains("linux")) {
+      libraryName = "test.so";
+    } else {
+      throw new IllegalStateException("Unsupported operating system for MoorDyn library: " + osName);
+    }
+    UserLibrary userLibrary_0 = simulation_0.getUserFunctionManager().createUserLibrary(resolvePath(dir + sep + libraryName));
     
 	//GET DFBI BODY
     ContinuumBody continuumBody_0 = ((ContinuumBody) simulation_0.get(star.sixdof.BodyManager.class).getObject("Body 1"));
@@ -40,7 +50,6 @@ public class initialize_MoorDyn extends StarMacro {
 	momentProfile_0.getMethod(UserVectorProfileMethod.class).setFunction(userFunction_1);
 
  // SAVE 
-    String sep = System.getProperty("file.separator"); //get the right separator for your operative system    
     String filename = simulation_0.getPresentationName(); //get the name of the current sim file       
     simulation_0.saveState(dir + sep + filename + "@moordyn.sim"); //save the current sim file as name_of_the_file@mod.sim
 

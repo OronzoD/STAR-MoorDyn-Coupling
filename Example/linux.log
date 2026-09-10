@@ -1,0 +1,281 @@
+Simcenter STAR-CCM+ 2602.0001 Build 21.02.008 (linux-x86_64-2.28/clang20.1-r8)
+
+License build date: 29 Oct 2025
+This version of the code requires license version 2026.02 or greater.
+Checking license file: 1999@flex.cd-adapco.com
+1 copy of ccmppower checked out from 1999@flex.cd-adapco.com
+Feature ccmppower expires in 179 days
+Thu Sep 10 12:19:05 2026
+
+Server::start -host compute-2-21.cluster.lan:47827
+Loading: PointAbsorber.sim
+Loading module: MaterialModel
+Loading module: MetricsModel
+Loading module: MotionModel
+Loading module: TurbulenceModel
+Loading module: StarMeshing
+Loading module: StarTMTCommands
+Loading module: MeshingSurfaceRepair
+Loading module: CadGeometryRepair
+Started Parasolid modeler version 38.0.185
+Loading module: CadModeler
+Loading module: StarResurfacer
+Loading module: StarTrimmer
+Loading module: VofModel
+Loading module: StarSweptMesher
+Loading module: SixDofModel
+Loading module: VirtualDisk
+Loading module: DfbiVisModel
+Loading module: StarDualMesher
+Loading module: StarExtruder
+Loading module: CaeImport
+Loading module: SixDofMotionModel
+Loading module: DfbiFlowForces
+Loading module: OversetModel
+Loading module: OversetFlowModel
+Loading module: CaeDataSource
+Loading module: CaeExport
+Loading module: AmrMapping
+Loading module: StarOffset
+Loading module: WavesModel
+Loading module: PLMXmlIo
+Loading module: ConservativeMapping
+Saved by:
+  Simcenter STAR-CCM+ 2022.1 Build 17.02.007 (win64/intel20.1vc14.2-r8) Np=12 
+This file was saved after a non-recoverable error occurred and therefore its behavior may be inconsistent.
+If possible use a file saved prior to the non-recoverable error.
+Playing macro: /home/odelledera/NewLibTest/initialize_MoorDyn.java
+Loading user library /home/odelledera/NewLibTest/test.so
+   MoorDyn closed.
+
+ Running MoorDyn (v1.01.02C, 2021-02-14)
+   Copyright (c) Matt Hall, licensed under GPL v3.
+   Creating mooring system.  1 fairleads, 1 anchors, 2 connections.
+   Warning from Catenary: Unstretched line length too large.
+   Finalizing ICs using dynamic relaxation (2X normal drag)
+    t = 1 s, tension at first fairlead is 1310.2 N    
+    t = 2 s, tension at first fairlead is 1300.61 N    
+    t = 3 s, tension at first fairlead is 1299.24 N    
+    t = 4 s, tension at first fairlead is 1305 N    
+   Fairlead tensions converged to 1% after 4 seconds.        
+
+
+
+
+################################################################## 
+#### MoorDynStar LOADED SUCCESSFULLY!                         #### 
+####                                                          #### 
+#### Path lines.txt:	/home/odelledera/NewLibTest
+####                                                          #### 
+################################################################## 
+
+
+
+Loading/configuring connectivity (old|new partitions: 12|32)
+  tank (index 1): 33854 cells, 100309 faces, 39469 verts.
+  Overset (index 2): 11086 cells, 51812 faces, 37662 verts.
+Configuring finished
+Saving: /home/odelledera/NewLibTest/PointAbsorber@moordyn.sim... complete (15.929MB in 0.55824s).
+Initialization of star.flow.EffectiveViscosityModel requires an additional pass...
+Initialization of star.flow.EffectiveViscositySolver requires an additional pass...
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+Re-partitioning
+Initialization of star.mixturemultiphase.SegregatedVolumeFluxBasedFlowModel requires an additional pass...
+Initialization of star.segregatedflow.SegregatedFlowSolver requires an additional pass...
+Initialization of star.vof.SegregatedVofModel requires an additional pass...
+Initialization of star.vof.SegregatedVofSolver requires an additional pass...
+Mesh of the region tank adapted.
+Initialization of star.flow.EffectiveViscosityModel requires an additional pass...
+Initialization of star.flow.EffectiveViscositySolver requires an additional pass...
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+Re-partitioning
+Initialization of star.mixturemultiphase.SegregatedVolumeFluxBasedFlowModel requires an additional pass...
+Initialization of star.segregatedflow.SegregatedFlowSolver requires an additional pass...
+Initialization of star.vof.SegregatedVofModel requires an additional pass...
+Initialization of star.vof.SegregatedVofSolver requires an additional pass...
+Mesh of the region tank adapted.
+Initialization of star.flow.EffectiveViscosityModel requires an additional pass...
+Initialization of star.flow.EffectiveViscositySolver requires an additional pass...
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+Re-partitioning
+Initialization of star.mixturemultiphase.SegregatedVolumeFluxBasedFlowModel requires an additional pass...
+Initialization of star.segregatedflow.SegregatedFlowSolver requires an additional pass...
+Initialization of star.vof.SegregatedVofModel requires an additional pass...
+Initialization of star.vof.SegregatedVofSolver requires an additional pass...
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+  Input Kinematic: X(0, 0, -1, 0, 0, 0, ) 
+  Input Velocity: Xd(0, 0, 0, 0, 0, 0, ) 
+  bycalc (0,0) F(-17.617, 0, -1304.91, ) M (0, 35.234, 0, ) 
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+     Iteration     Continuity     X-momentum     Y-momentum     Z-momentum            Tke            Tdr          water Solver Iteration Elapsed Time (s) Solver Iteration CPU Time (s) Total Solver Elapsed Time (s) Total Solver CPU Time (s)   CourantMedio Velocity x (m/s) Translation x (m) Acceleration x (m/s^2) Velocity z (m/s) Translation z (m) Acceleration z (m/s^2) Angular Acceleration y (radian/s^2) Angular Velocity y (radian/s) Orientation y (deg)    Force x (N)    Force z (N) Moment y (N-m) Force MoorDyn x (N) Force MoorDyn z (N) Moment MoorDyn y (N-m) Element Count 1 Solver CPU Time per Time Step (s) Solver Elapsed Time per Time Step (s)       wp-2 (m)       wp-1 (m)     wp-1.5 (m) Orientation x (deg) Orientation z (deg) Translation y (m) Moment MoorDyn x (N-m) Moment MoorDyn z (N-m) Force MoorDyn y (N)    Force y (N) Moment x (N-m) Moment z (N-m) velocity y (m/s) DFBI Distance x (m) DFBI Distance y (m) DFBI Distance z (m)     wp-0.5 (m)     wp+0.5 (m)       wp+1 (m)     wp+1.5 (m)       wp+2 (m)       wp-0 (m) Maximum Courant 
+             1   1.000000e+00   1.000000e+00   1.000000e+00   1.000000e+00   1.000000e+00   1.000000e+00   1.000000e+00                      3.082607e+00                  8.667062e+01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+             2   7.798671e-01   1.000000e+00   1.000000e+00   1.000000e+00   9.257462e-01   9.024281e-01   8.857490e-01                      4.941557e-01                  1.570648e+01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+             3   6.183210e-01   1.000000e+00   1.000000e+00   1.000000e+00   8.572908e-01   8.143991e-01   8.225123e-01                      4.814467e-01                  1.530788e+01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+             4   5.322941e-01   1.000000e+00   1.000000e+00   1.000000e+00   7.932639e-01   7.338644e-01   7.595253e-01                      4.924861e-01                  1.566715e+01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+             5   4.788839e-01   1.000000e+00   1.000000e+00   1.000000e+00   7.334319e-01   6.603108e-01   6.988980e-01                      5.470679e-01                  1.740381e+01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+             6   4.405650e-01   1.001073e+00   1.121665e+00   1.002210e+00   6.775691e-01   5.932466e-01   6.405233e-01                      4.947019e-01                  1.573017e+01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+             7   4.111280e-01   1.000974e+00   1.233673e+00   1.004118e+00   6.254574e-01   5.322025e-01   5.849485e-01                      5.261860e-01                  1.670521e+01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+A floating point error has occurred. The following error has been logged:
+  Non-finite value detected while computing values for Monitor CourantMedio Monitor. Typical causes are overflow, underflow, or a division by zero.
+Please check your usage and inputs.
+TimeStep    1: Time  2.000000e-02
+A floating point error has occurred. The following error has been logged:
+  Non-finite value detected while computing values for Monitor wp-0 Monitor. Typical causes are overflow, underflow, or a division by zero.
+Please check your usage and inputs.
+             8   3.878202e-01   1.000154e+00   1.334397e+00   1.005638e+00   5.768872e-01   4.767312e-01   5.323350e-01                      4.897261e-01                  1.557107e+01                  7.537533e+00              2.237101e+02            nan    -2.524587e-05     -2.524587e-07          -1.262293e-03    -1.125524e-03     -1.125524e-05          -5.627618e-02                       -3.300608e-06                 -6.601217e-08       -3.782219e-08  -4.012728e+01   2.754303e+05  -6.382855e+01       -1.761699e+01       -1.304906e+03           3.523397e+01    5.222120e+05                      2.237101e+02                          7.537533e+00   1.495501e-07   3.262306e-08   4.698451e-08        0.000000e+00        0.000000e+00      0.000000e+00           0.000000e+00           0.000000e+00        0.000000e+00  -1.746838e+05   1.755353e+05  -1.869450e+01     0.000000e+00       -2.524587e-07        0.000000e+00       -1.000011e+00  -4.405562e-08  -5.260234e-08  -2.893872e-09   5.988820e-10   9.073427e-10            nan    4.807995e-02 
+Stopping criterion ImplicitUnsteadySolver::Maximum Inner Iterations satisfied.
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+  Input Kinematic: X(-2.52459e-07, 0, -1.00001, 0, -6.60122e-10, 0, ) 
+  Input Velocity: Xd(-2.52459e-05, 0, -0.00112552, 0, -6.60122e-08, 0, ) 
+  bycalc (1,0.02) F(-16.6955, 0, -1256.13, ) M (0, 33.391, 0, ) 
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+             9   3.958355e-01   5.470767e-01   9.282818e-01   5.766707e-01   1.209236e+00   1.259141e+00   1.497772e+00                      6.516802e-01                  2.071086e+01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+            10   3.946415e-01   8.924467e-01   7.413979e-01   9.210087e-01   1.103500e+00   1.123171e+00   1.352059e+00                      5.013829e-01                  1.594696e+01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+     Iteration     Continuity     X-momentum     Y-momentum     Z-momentum            Tke            Tdr          water Solver Iteration Elapsed Time (s) Solver Iteration CPU Time (s) Total Solver Elapsed Time (s) Total Solver CPU Time (s)   CourantMedio Velocity x (m/s) Translation x (m) Acceleration x (m/s^2) Velocity z (m/s) Translation z (m) Acceleration z (m/s^2) Angular Acceleration y (radian/s^2) Angular Velocity y (radian/s) Orientation y (deg)    Force x (N)    Force z (N) Moment y (N-m) Force MoorDyn x (N) Force MoorDyn z (N) Moment MoorDyn y (N-m) Element Count 1 Solver CPU Time per Time Step (s) Solver Elapsed Time per Time Step (s)       wp-2 (m)       wp-1 (m)     wp-1.5 (m) Orientation x (deg) Orientation z (deg) Translation y (m) Moment MoorDyn x (N-m) Moment MoorDyn z (N-m) Force MoorDyn y (N)    Force y (N) Moment x (N-m) Moment z (N-m) velocity y (m/s) DFBI Distance x (m) DFBI Distance y (m) DFBI Distance z (m)     wp-0.5 (m)     wp+0.5 (m)       wp+1 (m)     wp+1.5 (m)       wp+2 (m)       wp-0 (m) Maximum Courant 
+            11   3.980583e-01   9.876562e-01   5.901000e-01   9.940093e-01   1.006099e+00   1.000355e+00   1.220350e+00                      4.844810e-01                  1.540643e+01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+            12   4.030351e-01   1.007738e+00   4.691554e-01   1.001455e+00   9.164618e-01   8.896069e-01   1.096608e+00                      4.905256e-01                  1.559641e+01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+            13   4.085076e-01   1.008934e+00   3.976193e-01   9.954990e-01   8.340451e-01   7.899111e-01   9.865378e-01                      4.838460e-01                  1.538559e+01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+            14   4.138800e-01   1.009363e+00   3.833210e-01   9.933618e-01   7.583387e-01   7.003160e-01   8.861718e-01                      5.326957e-01                  1.693830e+01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+            15   4.188513e-01   1.008259e+00   4.152263e-01   9.914311e-01   6.888615e-01   6.199341e-01   7.945579e-01                      4.830302e-01                  1.536332e+01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+A floating point error has occurred. The following error has been logged:
+  Non-finite value detected while computing values for Monitor CourantMedio Monitor. Typical causes are overflow, underflow, or a division by zero.
+Please check your usage and inputs.
+A floating point error has occurred. The following error has been logged:
+  Non-finite value detected while computing values for Monitor wp-0 Monitor. Typical causes are overflow, underflow, or a division by zero.
+Please check your usage and inputs.
+TimeStep    2: Time  4.000000e-02
+            16   4.232913e-01   1.006258e+00   4.710651e-01   9.894589e-01   6.251614e-01   5.479394e-01   7.112247e-01                      4.831080e-01                  1.536206e+01                  1.220491e+01              3.721121e+02            nan    -6.196712e-05     -1.124589e-06          -1.836062e-03    -2.865893e-03     -5.116940e-05          -8.701845e-02                       -2.395981e-06                 -1.139318e-07       -1.409225e-07  -2.724832e+01   2.755094e+05  -5.084675e+01       -1.669551e+01       -1.256132e+03           3.339103e+01    5.222120e+05                      1.484021e+02                          4.667376e+00   4.160666e-07   9.352921e-08   1.210881e-07        0.000000e+00        0.000000e+00      0.000000e+00           0.000000e+00           0.000000e+00        0.000000e+00  -1.747257e+05   1.755793e+05  -1.876253e+01     0.000000e+00       -1.124589e-06        0.000000e+00       -1.000051e+00  -1.098541e-07  -1.337957e-07  -6.765312e-09   2.044225e-09   2.549024e-09            nan    5.863948e-02 
+Stopping criterion ImplicitUnsteadySolver::Maximum Inner Iterations satisfied.
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+  Input Kinematic: X(-1.12459e-06, 0, -1.00005, 0, -2.45956e-09, 0, ) 
+  Input Velocity: Xd(-6.19671e-05, 0, -0.00286589, 0, -1.13932e-07, 0, ) 
+  bycalc (2,0.04) F(-16.1772, 0, -1230.99, ) M (0, 32.3545, 0, ) 
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+            17   4.358996e-01   7.975692e-01   7.296701e-01   8.174493e-01   1.177316e+00   1.217905e+00   1.820548e+00                      6.663866e-01                  2.117686e+01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+            18   4.375389e-01   8.152219e-01   6.068199e-01   8.426194e-01   1.065917e+00   1.072937e+00   1.616457e+00                      5.563884e-01                  1.763659e+01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+            19   4.445459e-01   9.214785e-01   4.694562e-01   9.301242e-01   9.643102e-01   9.437686e-01   1.436015e+00                      5.188632e-01                  1.648803e+01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+            20   4.529633e-01   9.437621e-01   3.707847e-01   9.411764e-01   8.717021e-01   8.288722e-01   1.265123e+00                      1.068346e+00                  3.343129e+01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+     Iteration     Continuity     X-momentum     Y-momentum     Z-momentum            Tke            Tdr          water Solver Iteration Elapsed Time (s) Solver Iteration CPU Time (s) Total Solver Elapsed Time (s) Total Solver CPU Time (s)   CourantMedio Velocity x (m/s) Translation x (m) Acceleration x (m/s^2) Velocity z (m/s) Translation z (m) Acceleration z (m/s^2) Angular Acceleration y (radian/s^2) Angular Velocity y (radian/s) Orientation y (deg)    Force x (N)    Force z (N) Moment y (N-m) Force MoorDyn x (N) Force MoorDyn z (N) Moment MoorDyn y (N-m) Element Count 1 Solver CPU Time per Time Step (s) Solver Elapsed Time per Time Step (s)       wp-2 (m)       wp-1 (m)     wp-1.5 (m) Orientation x (deg) Orientation z (deg) Translation y (m) Moment MoorDyn x (N-m) Moment MoorDyn z (N-m) Force MoorDyn y (N)    Force y (N) Moment x (N-m) Moment z (N-m) velocity y (m/s) DFBI Distance x (m) DFBI Distance y (m) DFBI Distance z (m)     wp-0.5 (m)     wp+0.5 (m)       wp+1 (m)     wp+1.5 (m)       wp+2 (m)       wp-0 (m) Maximum Courant 
+            21   4.620104e-01   9.402164e-01   3.455216e-01   9.310456e-01   7.873574e-01   7.268423e-01   1.117570e+00                      7.229242e-01                  2.278900e+01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+            22   4.711040e-01   9.384249e-01   3.871495e-01   9.279163e-01   7.105959e-01   6.363905e-01   9.856368e-01                      4.975045e-01                  1.582586e+01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+            23   4.798797e-01   9.354503e-01   4.634729e-01   9.252878e-01   6.407883e-01   5.563371e-01   8.678024e-01                      5.009487e-01                  1.594294e+01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+Overset Mesh 1 needs update 
+
+Updating two-level indirect region interface Overset Mesh 1 between Overset and tank.
+
+A floating point error has occurred. The following error has been logged:
+  Non-finite value detected while computing values for Monitor CourantMedio Monitor. Typical causes are overflow, underflow, or a division by zero.
+Please check your usage and inputs.
+A floating point error has occurred. The following error has been logged:
+  Non-finite value detected while computing values for Monitor wp-0 Monitor. Typical causes are overflow, underflow, or a division by zero.
+Please check your usage and inputs.
+TimeStep    3: Time  6.000000e-02
+            24   4.878827e-01   9.317049e-01   5.501408e-01   9.225871e-01   5.773536e-01   4.856056e-01   7.624249e-01                      5.407179e-01                  1.715445e+01                  1.785303e+01              5.508688e+02            nan    -9.276172e-05     -2.671877e-06          -1.539730e-03    -4.532093e-03     -1.251492e-04          -8.331001e-02                       -1.771140e-06                 -1.493546e-07       -2.917745e-07  -2.686962e+01   2.755608e+05  -5.047780e+01       -1.617723e+01       -1.230993e+03           3.235447e+01    5.222120e+05                      1.787566e+02                          5.648118e+00   8.746613e-07   2.023930e-07   2.290421e-07        0.000000e+00        0.000000e+00      0.000000e+00           0.000000e+00           0.000000e+00        0.000000e+00  -1.747526e+05   1.756078e+05  -1.870506e+01     0.000000e+00       -2.671877e-06        0.000000e+00       -1.000125e+00  -1.963145e-07  -2.469903e-07  -1.021584e-08   5.481982e-09   5.883862e-09            nan    7.288037e-02 
+Stopping criterion ImplicitUnsteadySolver::Maximum Inner Iterations satisfied.
